@@ -28,9 +28,7 @@
                         <td>
                             <router-link class="btn btn-primary" :to="`/movies/edit/${movie.id}`">Editar</router-link>
                         </td>
-                        {{movie.id}}
                     </tr>
-
                     </tbody>
                 </table>
             </div>

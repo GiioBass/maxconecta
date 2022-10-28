@@ -51,7 +51,7 @@ class MovieController extends Controller
             DB::commit();
             return response()->json([
                 'status' => true,
-                'title' => 'Pelicula almacenada correctamente'
+                'message' => 'Pelicula almacenada correctamente'
             ]);
         } catch (\Throwable|\Exception $e) {
 
@@ -59,7 +59,7 @@ class MovieController extends Controller
             Log::error('Error almacenando el recurso', ['error' => $e]);
             return response()->json([
                 'status' => false,
-                'title' => 'Ocurrio un error al crear el registro'
+                'message' => 'Ocurrio un error al crear el registro'
             ]);
 
         }
@@ -111,14 +111,14 @@ class MovieController extends Controller
             DB::commit();
             return response()->json([
                 'status' => true,
-                'title' => 'Pelicula almacenada correctamente'
+                'message' => 'Pelicula almacenada correctamente'
             ]);
         } catch (\Throwable|\Exception $e) {
             DB::rollBack();
             Log::error('Error almacenando el recurso', ['error' => $e]);
             return response()->json([
                 'status' => false,
-                'title' => 'Ocurrio un error al crear el registro'
+                'message' => 'Ocurrio un error al crear el registro'
             ]);
 
         }

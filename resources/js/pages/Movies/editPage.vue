@@ -54,11 +54,9 @@ const idMovie = ref(route.params.id);
 const movie = ref({})
 const response = ref(null)
 
-
 const redirect = () => {
     router.push('/movies');
 }
-
 const getData = async () => {
     try {
         const res = await axios.get(`/movie/${idMovie.value}`)
@@ -81,6 +79,5 @@ const sendData = async () => {
     }
 }
 getData()
-
 </script>
 

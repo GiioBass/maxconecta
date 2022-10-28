@@ -49,7 +49,8 @@ class UserController extends Controller
             DB::commit();
             return response()->json([
                 'status' => true,
-                'title' => 'Usario almacenado correctamente'
+                'title' => 'success',
+                'message' => 'Usario almacenado correctamente'
             ]);
         }catch(\Throwable | \Exception $e)
         {
@@ -57,7 +58,8 @@ class UserController extends Controller
             Log::error('Error almacenando el recurso', ['error' => $e]);
             return response()->json([
                 'status' => false,
-                'title' => 'Ocurrio un error al crear el registro'
+                'title' => 'error',
+                'message' => 'Ocurrio un error al crear el registro'
             ]);
 
         }
@@ -107,7 +109,8 @@ class UserController extends Controller
             DB::commit();
             return response()->json([
                 'status' => true,
-                'title' => 'Usario almacenado correctamente'
+                'title' => 'success',
+                'message' => 'Usario almacenado correctamente'
             ]);
         }catch(\Throwable | \Exception $e)
         {
@@ -115,7 +118,8 @@ class UserController extends Controller
             Log::error('Error almacenando el recurso', ['error' => $e]);
             return response()->json([
                 'status' => false,
-                'title' => 'Ocurrio un error al crear el registro'
+                'title' => 'error',
+                'message' => 'Ocurrio un error al crear el registro'
             ]);
 
         }

@@ -53,11 +53,9 @@ const movie = ref({});
 const response = ref(null);
 const router = useRouter();
 
-
 const redirect = () => {
     router.push('/movies');
 }
-
 const sendData = async () => {
     try {
         const res = await axios.post(`/movie`, movie)
@@ -70,7 +68,6 @@ const sendData = async () => {
     } finally {
     }
 }
-
 </script>
 
 

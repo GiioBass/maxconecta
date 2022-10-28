@@ -47,11 +47,9 @@ const idUser = ref(route.params.id);
 const user = ref({})
 const response = ref(null)
 
-
 const redirect = () => {
     router.push('/users');
 }
-
 const getData = async () => {
     try {
         const res = await axios.get(`/user/${idUser.value}`)

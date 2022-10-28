@@ -4,13 +4,15 @@ use Illuminate\Support\Facades\Route;
 
 
 
-//Auth::routes();
+Route::get('/', function () {
+    return view('auth.login');
+});
 
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
 
 Route::resource('/movie', \App\Http\Controllers\MovieController::class);
 Route::resource('/user', \App\Http\Controllers\UserController::class);
 
 Route::get('{any}', function (){
-    return view('layouts.app');
-});
+    return view('home');
+})->middleware(['auth']);

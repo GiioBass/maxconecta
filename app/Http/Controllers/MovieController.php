@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Movie;
+use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -33,6 +34,7 @@ class MovieController extends Controller
     /**
      * Store a newly created resource in storage.
      *
+     * @param StoreMovieRequest $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)

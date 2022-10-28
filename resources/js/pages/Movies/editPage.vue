@@ -71,10 +71,20 @@ const sendData = async () => {
         const res = await axios.put(`/movie/${idMovie.value}`, movie)
         response.value = res.data
         if (response.value.status) {
+            Swal.fire({
+                title: 'Exitoso!',
+                text: response.value.message,
+                icon: response.value.title,
+            })
             redirect();
         }
     } catch (e) {
         console.log(e)
+        Swal.fire({
+            title: 'Error!',
+            text: response.value.message,
+            icon: response.value.title,
+        })
     } finally {
     }
 }

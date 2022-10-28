@@ -56,10 +56,20 @@ const sendData = async () => {
         const res = await axios.post(`/user`, user)
         response.value = res.data
         if (response.value.status) {
+            Swal.fire({
+                title: 'Exitoso!',
+                text: response.value.message,
+                icon: response.value.title,
+            })
             redirect();
         }
     } catch (e) {
         console.log(e)
+        Swal.fire({
+            title: 'Error!',
+            text: response.value.message,
+            icon: response.value.title,
+        })
     } finally {
     }
 }
